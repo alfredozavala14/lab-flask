@@ -35,9 +35,17 @@ def remove_celeb(celeb_id):
     my_dict = {'_id': ObjectId(str(celeb_id))}
     cel_db.delete_one(my_dict)
 
-'''
-def change_celeb(celeb_id):
-'''
+
+def change_celeb(celeb_id, new_dict):
+    '''
+    given an ID and a dictionary with new params, edits parameters
+    in the dictrionary
+
+    Takes: _id and dictionary with new values
+    Return: nothing
+    '''
+
+    cel_db.update_one({'_id': ObjectId(str(celeb_id))}, {"$set": new_dict})
 
 def check_id_exists(celeb_id):
     id_check = cel_db.find_one({'_id': ObjectId(str(celeb_id))})
