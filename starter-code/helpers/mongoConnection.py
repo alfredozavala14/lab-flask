@@ -35,8 +35,9 @@ def remove_celeb(celeb_id):
     my_dict = {'_id': ObjectId(str(celeb_id))}
     cel_db.delete_one(my_dict)
 
+'''
 def change_celeb(celeb_id):
-    Xx
+'''
 
 def check_id_exists(celeb_id):
     id_check = cel_db.find_one({'_id': ObjectId(str(celeb_id))})
